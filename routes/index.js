@@ -1,6 +1,7 @@
 'use strict'
 
-const photos = require('./photos')
+const photosRoute = require('./photos')
+const rootRoute = require('./root')
 
 /**
  * Routes
@@ -9,10 +10,10 @@ const photos = require('./photos')
  */
 module.exports = async function (fastify, opts) {
   fastify.get('/', async function (request, reply) {
-    reply.send({ root: true })
+    rootRoute(request, reply)
   })
 
   fastify.get('/photos', async function (request, reply) {
-    photos(request, reply)
+    photosRoute(request, reply)
   })
 }
