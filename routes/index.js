@@ -1,5 +1,7 @@
 'use strict'
 
+const photos = require('./photos')
+
 /**
  * Routes
  * @route GET /
@@ -11,8 +13,6 @@ module.exports = async function (fastify, opts) {
   })
 
   fastify.get('/photos', async function (request, reply) {
-    reply.send({
-      message: 'Hello World',
-    })
+    photos(request, reply)
   })
 }

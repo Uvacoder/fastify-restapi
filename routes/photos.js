@@ -1,6 +1,11 @@
 /**
  *
- * @param {*} req
+ * @route GET /photos
+ * @param {Request} req
  * @param {Reply} reply
  */
-export const photos = (req, reply) => {}
+module.exports = (req, reply) => {
+  reply.send({
+    message: 'Hello from the photos route',
+  })
+}
