@@ -6,9 +6,9 @@ import {
 } from 'fastify'
 
 /**
- * Routes
  * @route GET /
- * @route GET /photos
+ * @param {FastifyInstance} fastify Fastify Instance
+ * @param {Record<never, never>} opts Opts
  */
 const root: FastifyPluginAsync = async (
   fastify: FastifyInstance,
