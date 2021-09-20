@@ -14,6 +14,6 @@ module.exports = async function (fastify, opts) {
   })
 
   fastify.get('/photos', async function (request, reply) {
-    photosRoute(request, reply)
+    photosRoute(request, reply, fastify)
   })
 }
