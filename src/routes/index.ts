@@ -1,28 +1,27 @@
-import { FastifyReply, FastifyRequest, FastifyInstance } from 'fastify'
-import { RouteGenericInterface } from 'fastify/types/route'
-import { IncomingMessage, Server } from 'http'
-import { photosRoute } from './photos'
-import { rootRoute } from './root'
+import {
+  FastifyRequest,
+  FastifyInstance,
+  FastifyPluginAsync,
+  FastifyReply,
+} from 'fastify'
 
 /**
  * Routes
  * @route GET /
  * @route GET /photos
  */
-const routes = async (fastify: FastifyInstance, opts: unknown) => {
-  fastify.get(
-    '/',
-    async (
-      request: FastifyRequest<RouteGenericInterface, Server, IncomingMessage>,
-      reply,
-    ) => {
-      rootRoute(request, reply)
-    },
-  )
-
-  fastify.get('/photos', async function (request, reply) {
-    await photosRoute(request, reply, fastify)
+const root: FastifyPluginAsync = async (
+  fastify: FastifyInstance,
+  opts?: Record<never, never>,
+) => {
+  fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
+    reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({
+        message: 'Welcome to the Fastify API',
+      })
   })
 }
 
-export default routes
+export default root

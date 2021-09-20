@@ -4,10 +4,9 @@ import {
   FastifyReply,
   FastifyRequest,
 } from 'fastify'
-import fetch, { Response } from 'node-fetch'
 
 /**
- * @route GET /photos
+ * @route GET /example
  * @param {FastifyInstance} fastify Fastify Instance
  * @param {Record<never, never>} opts Opts
  */
@@ -16,11 +15,9 @@ const example: FastifyPluginAsync = async (
   opts?: Record<never, never>,
 ): Promise<void> => {
   fastify.get(
-    '/photos',
+    '/example',
     async function (request: FastifyRequest, reply: FastifyReply) {
-      const res: Response = await fetch('https://picsum.photos/v2/list')
-
-      reply.code(200).send(res.json())
+      return 'this is an example'
     },
   )
 }
