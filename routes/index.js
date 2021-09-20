@@ -8,12 +8,12 @@ const rootRoute = require('./root')
  * @route GET /
  * @route GET /photos
  */
-module.exports = async function (fastify, opts) {
-  fastify.get('/', async function (request, reply) {
+module.exports = async (fastify, opts) => {
+  fastify.get('/', async (request, reply) => {
     rootRoute(request, reply)
   })
 
   fastify.get('/photos', async function (request, reply) {
-    photosRoute(request, reply, fastify)
+    await photosRoute(request, reply, fastify)
   })
 }

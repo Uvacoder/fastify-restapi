@@ -1,12 +1,6 @@
-const photos = require('../utils/db/photos')
-const S = require('fluent-json-schema')
+'use strict'
 
-const photoSchema = S.object()
-  .prop('id', S.number())
-  .prop('title', S.string())
-  .prop('description', S.string())
-  .prop('url', S.string())
-  .prop('thumbnailUrl', S.string())
+const fetch = require('node-fetch')
 
 /**
  *
@@ -15,11 +9,8 @@ const photoSchema = S.object()
  * @param {Reply} reply
  * @param {FastifyInstance} fastify
  */
-module.exports = (req, reply, fastify) => {
-  fastify.addSchema(photoSchema)
+module.exports = async (req, reply, fastify) => {
+  const res = await fetch('https://picsum.photos/v2/list')
 
-  reply
-    .code(200)
-    .header('Content-Type', 'application/json; charset=utf-8')
-    .send(photos)
+  reply.code(200).send(res)
 }
