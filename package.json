@@ -2,17 +2,17 @@
   "name": "fastify-restapi",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./build/app.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "start": "fastify start -l info build/index.js",
+    "dev": "fastify start -w -l info -P ./src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "mrLuisFer",
   "license": "ISC",
   "dependencies": {
     "fastify": "^3.0.0",
@@ -24,6 +24,9 @@
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "tap": "^15.0.9"
-  }
+    "@types/node": "^16.9.4",
+    "tap": "^15.0.9",
+    "typescript": "^4.4.3"
+  },
+  "type": "module"
 }
