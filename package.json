@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info build/index.js",
-    "dev": "fastify start -w -l info -P ./src/index.ts"
+    "start": "fastify start -l info build/app.js",
+    "dev": "fastify start -w -l info -P ./src/app.ts",
+    "ts": "node --trace-warnings --experimental-loader ts-node/esm ./src/app.ts"
   },
   "keywords": [],
   "author": "mrLuisFer",
@@ -21,7 +22,8 @@
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.0",
     "fluent-json-schema": "^3.0.1",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "ts-node": "^10.2.1"
   },
   "devDependencies": {
     "@types/node": "^16.9.4",

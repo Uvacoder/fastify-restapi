@@ -9,7 +9,7 @@ import { rootRoute } from './root'
  * @route GET /
  * @route GET /photos
  */
-module.exports = async (fastify: FastifyInstance, opts: unknown) => {
+const routes = async (fastify: FastifyInstance, opts: unknown) => {
   fastify.get(
     '/',
     async (
@@ -24,3 +24,5 @@ module.exports = async (fastify: FastifyInstance, opts: unknown) => {
     await photosRoute(request, reply, fastify)
   })
 }
+
+export default routes

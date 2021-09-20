@@ -1,7 +1,7 @@
 import path from 'path'
 import AutoLoad from 'fastify-autoload'
 
-module.exports = async function (fastify: any, opts: any) {
+const app = async function (fastify: any, opts: any) {
   // Place here your custom code!
 
   fastify.register(AutoLoad, {
@@ -14,3 +14,5 @@ module.exports = async function (fastify: any, opts: any) {
     options: Object.assign({}, opts),
   })
 }
+
+export default app
