@@ -15,7 +15,7 @@ function config() {
 }
 
 // automatically build and tear down our instance
-function build(t) {
+function build(t: any) {
   /**
    * @type {FastifyInstance}
    */
@@ -32,7 +32,9 @@ function build(t) {
   return app
 }
 
-module.exports = {
+const helper = {
   config,
   build,
 }
+
+export default helper
