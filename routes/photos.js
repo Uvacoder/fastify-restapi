@@ -1,15 +1,16 @@
-const photos = require('../utils/db/photos')
+'use strict'
+
+const fetch = require('node-fetch')
 
 /**
  *
  * @route GET /photos
  * @param {Request} req
  * @param {Reply} reply
+ * @param {FastifyInstance} fastify
  */
-module.exports = (req, reply) => {
-  console.log(reply)
-  reply
-    .code(200)
-    .header('Content-Type', 'application/json; charset=utf-8')
-    .send(photos)
+module.exports = async (req, reply, fastify) => {
+  const res = await fetch('https://picsum.photos/v2/list')
+
+  reply.code(200).send(res)
 }
