@@ -1,13 +1,12 @@
-'use strict'
+import { FastifyInstance, LightMyRequestResponse } from 'fastify'
+import { test } from 'tap'
+import helper from '../helper'
 
-const { test } = require('tap')
-const { build } = require('../helper')
+test('default root route', async (t: Tap.Test) => {
+  const app: FastifyInstance = helper.build(t)
 
-test('default root route', async (t) => {
-  const app = build(t)
-
-  const res = await app.inject({
-    url: '/'
+  const res: LightMyRequestResponse = await app.inject({
+    url: '/',
   })
   t.same(JSON.parse(res.payload), { root: true })
 })

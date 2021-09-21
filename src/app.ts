@@ -8,8 +8,6 @@ const app: FastifyPluginAsync<AppOptions> = async function (
   fastify: any,
   opts: any,
 ): Promise<void> {
-  // Place here your custom code!
-
   void fastify.register(AutoLoad, {
     dir: join(__dirname, 'plugins'),
     options: Object.assign({}, opts),
