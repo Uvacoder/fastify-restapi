@@ -5,6 +5,7 @@ import {
   FastifyRequest,
 } from 'fastify'
 import { AutoloadPluginOptions } from 'fastify-autoload'
+import { photosArray } from '../utils/db/photos'
 
 /**
  * @route GET /photos
@@ -18,9 +19,7 @@ const photosRoute: FastifyPluginAsync = async (
   fastify.get(
     '/photos',
     async function (request: FastifyRequest, reply: FastifyReply) {
-      reply.send({
-        message: 'Hello World',
-      })
+      reply.send(photosArray)
     },
   )
 }
