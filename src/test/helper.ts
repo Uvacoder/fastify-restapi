@@ -1,12 +1,7 @@
-'use strict'
-
-/**
- * @type {FastifyInstance}
- */
-const Fastify = require('fastify')
-
-const fp = require('fastify-plugin')
-const App = require('../app')
+import { FastifyInstance } from 'fastify'
+import Fastify from 'fastify'
+import fp from 'fastify-plugin'
+import App from '../app'
 
 // Fill in this config with all the configurations
 // needed for testing the application
@@ -19,7 +14,7 @@ function build(t: any) {
   /**
    * @type {FastifyInstance}
    */
-  const app = Fastify()
+  const app: FastifyInstance = Fastify()
 
   // fastify-plugin ensures that all decorators
   // are exposed for testing purposes, this is

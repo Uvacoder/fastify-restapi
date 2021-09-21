@@ -1,10 +1,8 @@
-'use strict'
+import { test } from 'tap'
+import Fastify from 'fastify'
+import Support from '../../plugins/support'
 
-const { test } = require('tap')
-const Fastify = require('fastify')
-const Support = require('../../plugins/support')
-
-test('support works standalone', async (t) => {
+test('support works standalone', async (t: Tap.Test) => {
   const fastify = Fastify()
   fastify.register(Support)
 
