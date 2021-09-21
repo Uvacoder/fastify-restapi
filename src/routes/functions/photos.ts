@@ -5,7 +5,7 @@ import {
   FastifyRequest,
 } from 'fastify'
 import { AutoloadPluginOptions } from 'fastify-autoload'
-import { photosArray } from '../utils/db/photos'
+import { photosArray } from '../../utils/db/photos'
 
 /**
  * @route GET /photos

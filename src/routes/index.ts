@@ -5,8 +5,8 @@ import {
   FastifyReply,
 } from 'fastify'
 import { AutoloadPluginOptions } from 'fastify-autoload'
-import photosRoute from './photos'
-import rootRoute from './rootRoute'
+import photosRoute from './functions/photos'
+import rootRoute from './functions/rootRoute'
 
 /**
  * @route GET /
