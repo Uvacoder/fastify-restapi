@@ -7,6 +7,7 @@ import {
 import { AutoloadPluginOptions } from 'fastify-autoload'
 import photosRoute from './functions/photos'
 import rootRoute from './functions/rootRoute'
+import photoById from './functions/photoById'
 
 /**
  * @route GET /
@@ -19,5 +20,6 @@ const root: FastifyPluginAsync = async (
 ) => {
   rootRoute(fastify, opts)
   photosRoute(fastify, opts)
+  photoById(fastify, opts)
 }
 export default root
