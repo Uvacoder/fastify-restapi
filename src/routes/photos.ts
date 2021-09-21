@@ -11,7 +11,7 @@ import fetch, { Response } from 'node-fetch'
  * @param {FastifyInstance} fastify Fastify Instance
  * @param {Record<never, never>} opts Opts
  */
-const example: FastifyPluginAsync = async (
+const photosRoute: FastifyPluginAsync = async (
   fastify: FastifyInstance,
   opts?: Record<never, never>,
 ): Promise<void> => {
@@ -25,4 +25,4 @@ const example: FastifyPluginAsync = async (
   )
 }
 
-export default example
+export default photosRoute
