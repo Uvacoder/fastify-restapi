@@ -4,7 +4,7 @@ import {
   FastifyReply,
   FastifyRequest,
 } from 'fastify'
-import fetch, { Response } from 'node-fetch'
+import { AutoloadPluginOptions } from 'fastify-autoload'
 
 /**
  * @route GET /photos
@@ -13,14 +13,14 @@ import fetch, { Response } from 'node-fetch'
  */
 const photosRoute: FastifyPluginAsync = async (
   fastify: FastifyInstance,
-  opts?: Record<never, never>,
+  opts: Partial<AutoloadPluginOptions>,
 ): Promise<void> => {
   fastify.get(
     '/photos',
     async function (request: FastifyRequest, reply: FastifyReply) {
-      const res: Response = await fetch('https://picsum.photos/v2/list')
-
-      reply.code(200).send(res.json())
+      reply.send({
+        message: 'Hello World',
+      })
     },
   )
 }

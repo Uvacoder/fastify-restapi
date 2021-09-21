@@ -4,6 +4,8 @@ import {
   FastifyPluginAsync,
   FastifyReply,
 } from 'fastify'
+import { AutoloadPluginOptions } from 'fastify-autoload'
+import photosRoute from './photos'
 
 /**
  * @route GET /
@@ -12,7 +14,7 @@ import {
  */
 const root: FastifyPluginAsync = async (
   fastify: FastifyInstance,
-  opts?: Record<never, never>,
+  opts?: Partial<AutoloadPluginOptions> | any,
 ) => {
   fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
     reply
@@ -21,7 +23,8 @@ const root: FastifyPluginAsync = async (
       .send({
         message: 'Welcome to the Fastify API',
       })
+
+    photosRoute(fastify, opts)
   })
 }
-
 export default root
