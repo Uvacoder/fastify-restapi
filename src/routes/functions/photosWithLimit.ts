@@ -24,12 +24,12 @@ const photosWithLimit: FastifyPluginAsync = async (
       const limit: number = Number(params.limit)
       console.log(limit)
       if (limit > 0) {
-        const photos = photosArray.slice(0, limit)
+        const photosLimited = photosArray.slice(0, limit)
         const statusCode: number = 200
         reply
           .status(statusCode)
           .header('Content-Type', 'application/json; charset=utf-8')
-          .send({ statusCode, data: photos })
+          .send({ statusCode, data: photosLimited })
       } else {
         reply.status(404).send({
           statusCode: 404,
