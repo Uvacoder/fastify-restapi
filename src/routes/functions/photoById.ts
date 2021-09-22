@@ -29,10 +29,13 @@ const photoById: FastifyPluginAsync = async (
 
       if (photo !== undefined) {
         const statusCode: number = 200
-        reply.status(statusCode).send({
-          statusCode,
-          data: photo,
-        })
+        reply
+          .status(statusCode)
+          .header('Content-Type', 'application/json; charset=utf-8')
+          .send({
+            statusCode,
+            data: photo,
+          })
       } else {
         reply.status(404).send({
           error: 'Photo not found',

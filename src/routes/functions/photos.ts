@@ -19,7 +19,10 @@ const photosRoute: FastifyPluginAsync = async (
   fastify.get(
     '/photos',
     async function (request: FastifyRequest, reply: FastifyReply) {
-      reply.send(photosArray)
+      reply
+        .status(200)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send(photosArray)
     },
   )
 }
