@@ -4,15 +4,16 @@ import {
   FastifyReply,
   FastifyRequest,
 } from 'fastify'
+import { AutoloadPluginOptions } from 'fastify-autoload'
 
 /**
  * @route GET /example
  * @param {FastifyInstance} fastify Fastify Instance
- * @param {Record<never, never>} opts Opts
+ * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
 const example: FastifyPluginAsync = async (
   fastify: FastifyInstance,
-  opts?: Record<never, never>,
+  opts?: Partial<AutoloadPluginOptions>,
 ): Promise<void> => {
   fastify.get(
     '/example',

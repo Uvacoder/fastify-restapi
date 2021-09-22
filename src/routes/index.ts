@@ -9,7 +9,7 @@ import photosWithLimit from './functions/photosWithLimit'
 /**
  * @route GET /
  * @param {FastifyInstance} fastify Fastify Instance
- * @param {Record<never, never>} opts Opts
+ * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
 const root: FastifyPluginAsync = async (
   fastify: FastifyInstance,

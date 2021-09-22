@@ -10,7 +10,7 @@ import { photosArray } from '../../utils/db/photos'
 /**
  * @route GET /photos
  * @param {FastifyInstance} fastify Fastify Instance
- * @param {Record<never, never>} opts Opts
+ * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
 const photosRoute: FastifyPluginAsync = async (
   fastify: FastifyInstance,

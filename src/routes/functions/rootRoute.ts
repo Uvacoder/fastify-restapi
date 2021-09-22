@@ -9,7 +9,7 @@ import { AutoloadPluginOptions } from 'fastify-autoload'
 /**
  * @route GET /
  * @param {FastifyInstance} fastify Fastify Instance
- * @param {Record<never, never>} opts Opts
+ * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
 const rootRoute: FastifyPluginAsync = async (
   fastify: FastifyInstance,

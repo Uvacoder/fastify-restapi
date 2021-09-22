@@ -11,7 +11,7 @@ import { photosArray } from '../../utils/db/photos'
 /**
  * @route GET /photos/limit/{limit}
  * @param {FastifyInstance} fastify Fastify Instance
- * @param {Record<never, never>} opts Opts
+ * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
 const photosWithLimit: FastifyPluginAsync = async (
   fastify: FastifyInstance,
