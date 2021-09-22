@@ -5,6 +5,7 @@ import {
   FastifyRequest,
   RequestParamsDefault,
 } from 'fastify'
+import { AutoloadPluginOptions } from 'fastify-autoload'
 import { photosArray } from '../../utils/db/photos'
 
 /**
@@ -14,7 +15,7 @@ import { photosArray } from '../../utils/db/photos'
  */
 const photoById: FastifyPluginAsync = async (
   fastify: FastifyInstance,
-  opts?: Record<never, never>,
+  opts?: Partial<AutoloadPluginOptions>,
 ): Promise<void> => {
   fastify.get(
     '/photos/:id',

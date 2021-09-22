@@ -1,13 +1,10 @@
-import {
-  FastifyRequest,
-  FastifyInstance,
-  FastifyPluginAsync,
-  FastifyReply,
-} from 'fastify'
+import { FastifyInstance, FastifyPluginAsync } from 'fastify'
 import { AutoloadPluginOptions } from 'fastify-autoload'
+
 import photosRoute from './functions/photos'
 import rootRoute from './functions/rootRoute'
 import photoById from './functions/photoById'
+import photosWithLimit from './functions/photosWithLimit'
 
 /**
  * @route GET /
@@ -20,6 +17,7 @@ const root: FastifyPluginAsync = async (
 ) => {
   rootRoute(fastify, opts)
   photosRoute(fastify, opts)
+  photosWithLimit(fastify, opts)
   photoById(fastify, opts)
 }
 export default root
