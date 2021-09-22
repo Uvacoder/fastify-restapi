@@ -23,7 +23,6 @@ const photosByUrl: FastifyPluginAsync = async (
         id: photo.id,
         download_url: photo.download_url,
       }))
-      console.log(photosUrl)
       const statusCode: number = 200
       reply
         .status(statusCode)

@@ -22,7 +22,6 @@ const photosWithLimit: FastifyPluginAsync = async (
     async function (request: FastifyRequest, reply: FastifyReply) {
       const params: RequestParamsDefault | any = request.params
       const limit: number = Number(params.limit)
-      console.log(limit)
       if (limit > 0) {
         const photosLimited = photosArray.slice(0, limit)
         const statusCode: number = 200
