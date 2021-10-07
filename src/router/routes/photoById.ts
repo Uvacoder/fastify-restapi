@@ -22,7 +22,7 @@ const photoById: FastifyPluginAsync = async (
     async function (request: FastifyRequest, reply: FastifyReply) {
       console.log(request.params)
       // It should not be type Any but if it does not have it, it detects it as Unknown.
-      const params: RequestParamsDefault | any = request.params
+      const params: RequestParamsDefault | any = request.params!
       const id: string = params.id.toString()
 
       const photo = photosArray.find((photo) => id === photo.id)

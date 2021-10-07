@@ -1,11 +1,11 @@
 import { FastifyInstance, FastifyPluginAsync } from 'fastify'
 import { AutoloadPluginOptions } from 'fastify-autoload'
 
-import photosRoute from './functions/photos'
-import rootRoute from './functions/rootRoute'
-import photoById from './functions/photoById'
-import photosWithLimit from './functions/photosWithLimit'
-import photosByUrl from './functions/photosByDownloadUrl'
+import photosRoute from './routes/photos'
+import rootRoute from './routes/rootRoute'
+import photoById from './routes/photoById'
+import photosWithLimit from './routes/photosWithLimit'
+import photosByUrl from './routes/photosByDownloadUrl'
 
 /**
  * @route GET /
