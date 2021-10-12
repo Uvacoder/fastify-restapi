@@ -8,11 +8,11 @@ import { AutoloadPluginOptions } from 'fastify-autoload'
 import { photosArray } from '../../utils/db/photos'
 
 /**
- * @route GET /photos/downloadUrl
+ * @route GET /photos/url
  * @param {FastifyInstance} fastify Fastify Instance
  * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
-const photosByUrl: FastifyPluginAsync = async (
+const getPhotosByUrl: FastifyPluginAsync = async (
   fastify: FastifyInstance,
   opts?: Partial<AutoloadPluginOptions>,
 ): Promise<void> => {
@@ -35,4 +35,4 @@ const photosByUrl: FastifyPluginAsync = async (
   )
 }
 
-export default photosByUrl
+export default getPhotosByUrl

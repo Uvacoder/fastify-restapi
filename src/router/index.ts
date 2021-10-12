@@ -5,10 +5,9 @@ import photosRoute from './routes/photos'
 import rootRoute from './routes/rootRoute'
 import photoById from './routes/photoById'
 import photosWithLimit from './routes/photosWithLimit'
-import photosByUrl from './routes/photosByDownloadUrl'
+import getPhotosByUrl from './routes/getPhotosUrl'
 
 /**
- * @route GET /
  * @param {FastifyInstance} fastify Fastify Instance
  * @param {Partial<AutoloadPluginOptions>} opts Opts
  */
@@ -20,6 +19,7 @@ const root: FastifyPluginAsync = async (
   photosRoute(fastify, opts)
   photosWithLimit(fastify, opts)
   photoById(fastify, opts)
-  photosByUrl(fastify, opts)
+  getPhotosByUrl(fastify, opts)
 }
+
 export default root
